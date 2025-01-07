@@ -1388,6 +1388,7 @@ def langue():
 
 
 
+
 def projet():
     st.markdown(
         "<h1 style='color: #FFFFFF; text-align: center;'>Notre projet</h1>", 
@@ -1467,3 +1468,105 @@ def projet():
             </style>
             <hr>
             """, unsafe_allow_html=True)#ligne horizontale
+
+
+    st.markdown(
+                    "<h2 style='color:rgb(152, 227, 252); text-align: center;'>Petit rappel sur nos choix pour construire Wildflix</h2>",
+                    unsafe_allow_html=True
+                    )
+    st.write('---')
+    couverture, tmdb1, tmdb2, vad, nombre_vote,years, genre= "1.png", "2.png", '3.png', '5.png', '6.png','7.png', '8.png'
+
+    col1, col2, col3 = st.columns([1, 2, 1])  
+    with col2:  
+        st.image(couverture, width=600)
+
+    
+    def view_data(image, header, texte):
+        
+        st.write('---')
+            
+        
+        empt1, col1, col2, empt2 = st.columns([0.5, 2, 2, 0.5])
+        
+        
+        st.markdown("""
+        <style>
+        .text-container {
+            font-family: Arial, sans-serif;
+            color: #ffffff; /* Couleur blanche pour le texte */
+            background-color: #121212; /* Fond sombre */
+            padding: 20px;
+            border-radius: 8px;
+            margin: auto;
+        }
+
+        .text-container p {
+            font-size: 13px; /* Taille du texte */
+            font-style: italic; /* Italique */
+            line-height: 1.6; /* Espacement pour meilleure lisibilité */
+            color: #cccccc; /* Texte légèrement grisé */
+        }
+
+        h4 {
+            color: rgb(152, 227, 252); /* Bleu clair pour le titre */
+            text-align: center;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+
+        
+        with col1:
+            st.write('')
+            st.image(image, width=500)
+
+        
+        with col2:
+            st.markdown(
+                f"<h4>{header}</h4>",
+                unsafe_allow_html=True
+            )
+            st.write('')
+            st.markdown(f"""
+            <div class="text-container">
+                <p>{texte}</p>
+            </div>
+            """, unsafe_allow_html=True)
+
+
+
+
+    view_data(tmdb1, 'Pourquoi choisir TMDB ?', '*Nous avons sélectionné TMDB (The Movie Database) comme base de données principale pour sa nature collaborative et accessible. Contrairement à d’autres plateformes comme IMDB, TMDB est une ressource ouverte à tous, alimentée par les contributions d’une communauté active. Cette approche permet une mise à jour constante des informations et une grande diversité culturelle. De plus, son API gratuite et puissante nous offre une flexibilité technique essentielle pour intégrer et exploiter les données efficacement. Ce choix garantit une base solide et adaptée à nos objectifs.*')
+    view_data(tmdb2, 'Les avantages spécifiques de TMDB', ' TMDB offre plusieurs avantages qui ont motivé notre choix. Son API est particulièrement robuste et gratuite, ce qui la rend idéale pour développer des projets nécessitant une intégration rapide et efficace. La plateforme favorise également les projets open source, ce qui nous permet d’accéder à des outils tiers et de maximiser notre potentiel de création. Enfin, TMDB se distingue par sa capacité à refléter des perspectives variées, avec un accent sur des contenus adaptés à différentes cultures et langues, un point clé pour répondre aux besoins d’un public diversifié.')
+    view_data(vad, 'Analyse de la consommation vidéo en France', ' Pour comprendre notre public, nous avons étudié comment les Français consomment les contenus vidéo. Cette analyse inclut les genres les plus appréciés, les thématiques populaires, ainsi que les habitudes de visionnage sur des plateformes locales comme Allociné. Allociné, avec son ancrage culturel français, fournit des critiques et des notes qui répondent aux attentes spécifiques de ce marché. En nous basant sur ces données, nous sommes en mesure de proposer une offre qui reflète les préférences des spectateurs français.')
+    view_data(nombre_vote, 'Identifier l’engagement des spectateurs', ' Nous avons examiné les métriques d’engagement des spectateurs sur TMDB pour identifier les films qui génèrent le plus d’interactions. Les indicateurs utilisés incluent le nombre de votes, de vues, et les ajouts aux listes de souhaits. Ces données nous aident à mieux comprendre quels films captivent le public et à orienter nos recommandations vers les œuvres les plus engageantes.')
+    view_data(years, ' Construire autour de la popularité', ' TMDB offre des données de popularité détaillées. Nous utilisons ces informations pour analyser la demande des spectateurs, en identifiant les années, les plus recherchés. Ces analyses permettent de mieux structurer nos recommandations et d’aligner notre offre sur les attentes réelles des utilisateurs.')
+    view_data(genre, '  Analyser la popularité par genres pour améliorer les recommandations', 'nous utilisons les données de popularité de TMDB, en nous concentrant spécifiquement sur les genres. En étudiant le nombre de vues, de votes et les ajouts aux watchlists par genre, nous identifions les préférences des spectateurs et les tendances dominantes. Cette approche nous permet :\n- De mieux comprendre l\'impact des genres sur les choix des spectateurs.\n- De personnaliser nos recommandations en fonction des goûts individuels.\n- D\'orienter notre contenu vers les catégories qui génèrent le plus d\'intérêt.\nEn exploitant ces informations, nous démontrons la capacité de notre système de recommandation à s’adapter dynamiquement aux demandes des utilisateurs, tout en maximisant leur engagement avec notre plateforme.')
+
+    st.write('---')
+
+    st.markdown(
+                    "<h2 style='color:rgb(152, 227, 252); text-align: center;'>Pour Conclure</h2>",
+                    unsafe_allow_html=True
+                    )
+    st.write('')
+    conclusion = '''
+    En construisant notre projet autour de TMDB, nous avons fait le choix d’une base de données collaborative, accessible et techniquement adaptée à nos besoins. Cette plateforme nous offre une flexibilité exceptionnelle grâce à son API, tout en reflétant la diversité culturelle nécessaire pour toucher un public international et francophone.
+
+    Notre analyse approfondie des habitudes de consommation vidéo des Français, combinée à l’étude des métriques d’engagement et de popularité, nous permet de comprendre les attentes des spectateurs et de proposer une offre personnalisée et pertinente. En identifiant les œuvres les plus engageantes et en nous appuyant sur des données fiables, nous construisons une stratégie qui s’aligne avec les tendances du marché tout en répondant aux besoins des utilisateurs.
+
+    Ainsi, ce projet s’inscrit dans une démarche ambitieuse visant à enrichir l’expérience des spectateurs en offrant des contenus adaptés à leurs préférences, tout en garantissant une interface intuitive et performante. Notre approche centrée sur les données place l’utilisateur au cœur de nos décisions, assurant la réussite et la pérennité de notre plateforme.
+    '''
+
+    formatted_conclusion = conclusion.strip().replace("\n", "<br>")
+    col6, col7, col8 = st.columns([1,5,1])
+    
+    with col7:
+        st.markdown(
+            """
+            <div style="text-align: justify; font-size: 16px; color: white; line-height: 1.6; background-color: #121212; padding: 20px; border-radius: 8px;">
+                {content}
+            </div>
+            """.format(content=formatted_conclusion),  # Utilisation de .format pour insérer le texte correctement
+            unsafe_allow_html=True
+        )
