@@ -1,1 +1,1 @@
-lien du site = https://github.com/Charlyf-Data/wildflix.md
+lien du site = https://wildflix-projet.streamlit.app
