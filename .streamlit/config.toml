@@ -2,5 +2,6 @@
 showErrorDetails = "none"
 
 [theme]
-primaryColor = "#08082e"
-backgroundColor = "black" 
+base="dark"
+backgroundColor="#121820"
+secondaryBackgroundColor="#40425e"
